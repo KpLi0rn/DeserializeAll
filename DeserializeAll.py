@@ -6,7 +6,7 @@ import sys
 
 # 批量反编译
 def DeserializeAll(paths,outputpath):
-    if paths.endswith("jar"):
+    if paths.endswith("jar") or paths.endswith("class"):
         popen = subprocess.Popen(['java','-jar','cfr-0.151.jar',paths,'--outputpath',outputpath],stdout=subprocess.PIPE)
         data = popen.stdout.read()
         print(data)
