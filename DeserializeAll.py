@@ -6,7 +6,7 @@ import sys
 
 # 批量反编译
 def DeserializeAll(paths,outputpath):
-    if paths.endswith("jar") or paths.endswith("class"):
+    if paths.endswith("jar"):
         popen = subprocess.Popen(['java','-jar','cfr-0.151.jar',paths,'--outputpath',outputpath],stdout=subprocess.PIPE)
         data = popen.stdout.read()
         print(data)
@@ -19,7 +19,7 @@ def DeserializeAll(paths,outputpath):
                     data = popen.stdout.read()
                     print(data)
             elif os.path.isdir(childpath):
-                DeserializeAll(childpath)
+                DeserializeAll(childpath,outputpath)
 
 try:
     OriginPath = sys.argv[1]
