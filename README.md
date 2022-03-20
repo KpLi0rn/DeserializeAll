@@ -1,5 +1,5 @@
 # DeserializeAll
-一个简单的批量反序列化jar包的小脚本
+一个简单的批量反编译化jar包的小脚本
 
 python3 版本，利用了 cfr.jar
 
